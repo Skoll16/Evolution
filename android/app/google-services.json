@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "15037471699",
+    "firebase_url": "https://dummyauth-df4e8.firebaseio.com",
+    "project_id": "dummyauth-df4e8",
+    "storage_bucket": "dummyauth-df4e8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:15037471699:android:8fc96b1765afc0a2",
+        "android_client_info": {
+          "package_name": "com.example.dummyauth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "15037471699-l609gma25024hc5f6n7562m3r7mpig44.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-iqdbQxnMhy00H4RD08lQ_m2bYSHdXW0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "15037471699-l609gma25024hc5f6n7562m3r7mpig44.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
