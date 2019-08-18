@@ -27,7 +27,10 @@ class _HomePageState extends State<HomePage> {
                     color: Colors.red, style: BorderStyle.solid, width: 3),
                 child: Text('Logout'),
                 onPressed: () {
-                    FirebaseAuth.instance.signOut().then((value){}).catchError((e){print(e);});
+                    FirebaseAuth.instance.signOut().then((value){
+                      Navigator.of(context).pushReplacementNamed('/landingpage');
+                    }).catchError((e){Text(e.toString());
+                    print(e);});
 
                 },
               )

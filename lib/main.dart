@@ -1,5 +1,6 @@
 import 'package:dummyauth/homepage.dart';
 import 'package:dummyauth/loginPage.dart';
+import 'package:dummyauth/phoneAuth.dart';
 import 'package:dummyauth/signupPage.dart';
 import 'package:flutter/material.dart';
 
@@ -14,6 +15,7 @@ Widget build(BuildContext context) {
     '/landingpage':(BuildContext context)=>new MyApp(),
     '/signup':(BuildContext context)=> new SignUpPage(),
     '/homepage':(BuildContext context)=>new HomePage(),
+    '/phoneauth':(BuildContext context)=>new phoneAuth(),
     },
 
   );
