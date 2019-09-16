@@ -8,6 +8,16 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+//    FirebaseAuth.instance.currentUser().then((firebaseUser){
+//   if(firebaseUser == null)
+//    {
+//      Navigator.of(context).pushReplacementNamed('/landingpage');
+//    }
+//    else{
+//        // Navigator.of(context).pushReplacementNamed('/homepage');
+
+//   }
+// });
     return Scaffold(
       appBar: AppBar(
         title: new Text('Dummy_Auth'),

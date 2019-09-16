@@ -1,13 +1,20 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:google_sign_in/google_sign_in.dart';
+//import 'package:google_sign_in/google_sign_in.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
+//import 'package:firebase_messaging/firebase_messaging.dart';
 
 class LoginPage extends StatefulWidget {
   _LoginPageState createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
+  
+
+ 
+  //getting token for the device on which we wanna shoot notification
+
+  
   String _email, _password;
   FacebookLogin fblogin = new FacebookLogin();
  
@@ -19,6 +26,7 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   void initiateFacebookLogin() async {
+     String email,profile;
     var facebookLogin = FacebookLogin();
     var facebookLoginResult = await facebookLogin
         .logInWithReadPermissions(['email', 'public_profile']);
@@ -36,10 +44,22 @@ class _LoginPageState extends State<LoginPage> {
         onLoginStatusChanged(true);
         break;
     }
+     
+    
   }
 
    @override
   Widget build(BuildContext context) {
+//     FirebaseAuth.instance.currentUser().then((firebaseUser){
+//   if(firebaseUser == null)
+//    {
+//      Navigator.of(context).pushNamed('/landingpage');
+//    }
+//    else{
+//        Navigator.of(context).pushReplacementNamed('/homepage');
+
+//   }
+// });
     return Scaffold(
       body: Center(
         child: Container(
@@ -56,7 +76,7 @@ class _LoginPageState extends State<LoginPage> {
                 },
               ),
               SizedBox(
-                height: 15,
+                height: 10,
               ),
               TextField(
                 decoration: InputDecoration(hintText: 'Password'),
@@ -68,7 +88,7 @@ class _LoginPageState extends State<LoginPage> {
                 obscureText: true,
               ),
               SizedBox(
-                height: 20,
+                height: 10,
               ),
               RaisedButton(
                 child: Text(
@@ -84,7 +104,7 @@ class _LoginPageState extends State<LoginPage> {
                     password: _password,
                   )
                       .then((FirebaseUser user) {
-                    Navigator.of(context).pushReplacementNamed('/homepage');
+                    Navigator.of(context).pushReplacementNamed('/userInfo');
                   }).catchError((e) {
                     Text(e.toString());
                     print(e);
@@ -102,7 +122,22 @@ class _LoginPageState extends State<LoginPage> {
                   textColor: Colors.red,
                   elevation: 8,
                   onPressed: () {
-                   Navigator.of(context).pushReplacementNamed('/phoneauth');
+                   Navigator.of(context).pushReplacementNamed('/khulja');
+                     
+                  }),
+
+                  SizedBox(
+                height: 10,
+              ),
+              RaisedButton(
+                  child: Text(
+                    'Something Something!!',
+                  ),
+                  color: Colors.white,
+                  textColor: Colors.red,
+                  elevation: 8,
+                  onPressed: () {
+                   Navigator.of(context).pushReplacementNamed('/khulja');
                      
                   }),
               SizedBox(
@@ -132,7 +167,17 @@ class _LoginPageState extends State<LoginPage> {
                 textColor: Colors.white,
                 elevation: 8,
                 onPressed: () {
-                  Navigator.of(context).pushNamed('/signup');
+                  Navigator.of(context).pushNamed('/khulja');
+                },
+              ),
+              
+               RaisedButton(
+                child: Text('Try Me'),
+                color: Colors.orange,
+                textColor: Colors.white,
+                elevation: 8,
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/khulja');
                 },
               )
             ],
